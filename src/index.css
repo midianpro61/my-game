@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Chakra Petch', 'Cairo', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --font-sans: 'Cairo', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
+    background-color: #020617;
+    font-family: var(--font-sans);
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    touch-action: manipulation;
+  }
+}
+
+.forced-landscape-stage {
+  width: 100vw;
+  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  box-sizing: border-box;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes rockstarPulse {
+  0% {
+    transform: translate3d(0, 8px, 0) scale3d(0.94, 0.94, 1);
+    opacity: 0;
+  }
+  22% {
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+    opacity: 1;
+  }
+  78% {
+    transform: translate3d(0, 0, 0) scale3d(1.015, 1.015, 1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, -4px, 0) scale3d(1.03, 1.03, 1);
+    opacity: 0;
+  }
+}
+
+@keyframes apexReveal {
+  0% {
+    transform: translate3d(0, 8px, 0) scale3d(0.94, 0.94, 1);
+    opacity: 0;
+  }
+  22% {
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+    opacity: 1;
+  }
+  78% {
+    transform: translate3d(0, 0, 0) scale3d(1.015, 1.015, 1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, -4px, 0) scale3d(1.03, 1.03, 1);
+    opacity: 0;
+  }
+}
+
+.animate-rockstar-logo {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  animation: rockstarPulse 2.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-apex-logo {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  animation: apexReveal 2.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Smooth Touch & Mouse Scrolling for All Modals (Garage, Cars Showroom, Maps, Shop, Settings) */
+.responsive-modal-overlay {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-y pan-x !important;
+  overscroll-behavior: contain !important;
+}
+
+.responsive-modal-card {
+  max-height: min(88vh, 88dvh, calc(100% - 12px)) !important;
+  width: min(96%, 1120px);
+  display: flex;
+  flex-direction: column;
+}
+
+.scrollable-modal-body {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-y pan-x !important;
+  overscroll-behavior: contain !important;
+  flex: 1 1 0% !important;
+  min-height: 0 !important;
+  max-height: calc(86vh - 56px) !important;
+  max-height: calc(86dvh - 56px) !important;
+}
+
+.scrollable-modal-body * {
+  touch-action: pan-y pan-x !important;
+}
+
+.scrollable-modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollable-modal-body::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 8px;
+}
+
+.scrollable-modal-body::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.65);
+  border-radius: 8px;
+}
+
+.scrollable-modal-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 158, 11, 0.9);
+}
+
+/* Compact Mobile Scaling for Short Landscape Android Screens (16:9, 18:9, 20:9, 21:9) */
+@media screen and (max-height: 520px) {
+  .responsive-modal-card {
+    max-height: min(92vh, 92dvh, calc(100% - 8px)) !important;
+    border-radius: 16px !important;
+  }
+  .scrollable-modal-body {
+    max-height: calc(92vh - 52px) !important;
+    max-height: calc(92dvh - 52px) !important;
+  }
+}
+
+@media screen and (max-height: 430px) and (orientation: landscape) {
+  .forced-landscape-stage header {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+  }
+  .forced-landscape-stage aside {
+    transform: scale(0.9);
+    transform-origin: bottom left;
+  }
+}
+
+/* Forced Landscape Stage for Portrait Mobile Android Devices (Zero Clipping across all aspect ratios!) */
+@media screen and (orientation: portrait) {
+  .forced-landscape-stage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vh !important;
+    height: 100vw !important;
+    width: 100dvh !important;
+    height: 100dvw !important;
+    transform: translate(-50%, -50%) rotate(90deg);
+    transform-origin: center center;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .responsive-modal-card {
+    max-height: min(90vw, 90dvw, calc(100% - 10px)) !important;
+    width: min(96%, 94vh, 94dvh) !important;
+    border-radius: 16px !important;
+  }
+
+  .scrollable-modal-body {
+    max-height: calc(90vw - 54px) !important;
+    max-height: calc(90dvw - 54px) !important;
+  }
+}
+

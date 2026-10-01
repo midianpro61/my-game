@@ -1,0 +1,18 @@
+{
+  "name": "Mido NX: Apex Hill Racing",
+  "short_name": "Apex Hill Racing",
+  "description": "لعبة سباق تلال فيزيائية احترافية تعمل بملء الشاشة وبدون إنترنت (100% Offline)",
+  "start_url": "/",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 420'%3E%3Crect x='16' y='16' width='388' height='388' rx='90' fill='%23040B1E' stroke='%23F59E0B' stroke-width='14'/%3E%3Ccircle cx='305' cy='118' r='36' fill='%23FDE047'/%3E%3Cpolygon points='22,290 128,136 232,290' fill='%230F172A' stroke='%2338BDF8' stroke-width='4'/%3E%3Cpolygon points='148,295 262,118 398,295' fill='%231E293B' stroke='%2300F0FF' stroke-width='4'/%3E%3Cpath d='M 22 268 Q 145 205 235 225 T 398 188' fill='none' stroke='%2322C55E' stroke-width='16'/%3E%3Cg transform='translate(236,178) rotate(-15)'%3E%3Cpath d='M -82,16 L -78,-6 Q -38,-30 18,-22 L 74,-3 Q 88,6 78,16 Z' fill='%2300F0FF' stroke='%23FFF' stroke-width='4'/%3E%3Ccircle cx='-46' cy='17' r='16' fill='%23020617' stroke='%23F59E0B' stroke-width='5'/%3E%3Ccircle cx='46' cy='17' r='16' fill='%23020617' stroke='%23F59E0B' stroke-width='5'/%3E%3C/g%3E%3Crect x='22' y='306' width='376' height='92' rx='24' fill='%23020617'/%3E%3Ctext x='210' y='362' text-anchor='middle' fill='%23F59E0B' font-family='sans-serif' font-weight='900' font-style='italic' font-size='38'%3EMIDO NX%3C/text%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
