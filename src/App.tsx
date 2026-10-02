@@ -1519,6 +1519,17 @@ export default function App() {
                 <span className="hidden sm:inline">{hudState.weatherLabel}</span>
               </button>
               <button
+                onClick={() => {
+                  soundEngine.playClick();
+                  setActiveModal(MenuModal.EXPORT_HTML);
+                }}
+                title="نسخ أو تحميل الكود الكامل لملف index.html"
+                className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/60 text-[11px] font-bold text-cyan-200 transition-colors cursor-pointer shrink-0"
+              >
+                <Code2 className="w-3.5 h-3.5 text-cyan-300" />
+                <span>كود index.html</span>
+              </button>
+              <button
                 onClick={toggleFullscreenLandscape}
                 title="ملء الشاشة بالوضع الأفقي (Fullscreen 16:9)"
                 className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors cursor-pointer"
